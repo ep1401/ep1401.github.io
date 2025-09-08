@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethan Puckett — Projects</title>
+  <meta name="description" content="A curated selection of projects I’ve built or contributed to." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #12141a;
+      --text: #e6e6e6;
+      --muted: #a7b0c0;
+      --accent: #7c9cff;
+      --accent-hi: #a9b8ff;
+      --card: #171a21;
+      --border: #242837;
+      --btn: #20263a;
+      --btn-text: #e6e6e6;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --text: #0f1222;
+        --muted: #4b5565;
+        --accent: #375dfb;
+        --accent-hi: #2544e6;
+        --card: #ffffff;
+        --border: #e5e7ef;
+        --btn: #eef1ff;
+        --btn-text: #0f1222;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 30% -10%, rgba(124,156,255,0.18), transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      padding: 48px 0 16px;
+    }
+    .title {
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 0 0 10px 0;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: clamp(16px, 2.2vw, 18px);
+      margin: 0 0 22px 0;
+    }
+    .links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--btn-text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin: 24px 0 64px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(124,156,255,0.06), rgba(124,156,255,0.0) 40%), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 14.5px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      background: rgba(124,156,255,0.12);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+    }
+    .spacer { flex: 1 1 auto; }
+    .card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    footer {
+      padding: 18px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; color: var(--accent-hi); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title">Ethan Puckett — Projects</h1>
+      <p class="subtitle">
+        A short showcase of four projects I’ve built or contributed to. Each card links to the repository and, if available, a live demo.
+      </p>
+      <div class="links">
+        <!-- Replace the placeholder GitHub URL -->
+        <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub Profile</a>
+        <!-- Optional: add LinkedIn or Resume -->
+        <a class="btn" href="#" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- PROJECT 1 -->
+      <article class="card">
+        <h3>CloudDock (VS Code extension)</h3>
+        <p>Unified control for AWS &amp; Azure VMs inside VS Code, with built‑in cost visibility and group‑based scheduling.</p>
+        <div class="tags">
+          <span class="tag">TypeScript</span><span class="tag">AWS SDK</span><span class="tag">Azure SDK</span><span class="tag">VS Code API</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/your-username/clouddock" target="_blank" rel="noopener">View Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="card">
+        <h3>Signable (ASL study tool)</h3>
+        <p>Video-based flashcards, custom quizzes, and professor admin tools — actively used by 100+ students each semester.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/your-username/signable" target="_blank" rel="noopener">View Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="card">
+        <h3>EquipmentEaze (P2P rentals)</h3>
+        <p>Peer‑to‑peer equipment marketplace focused on scalable search and role‑based access control.</p>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">Node</span><span class="tag">PostgreSQL</span><span class="tag">Auth</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/your-username/equipmenteaze" target="_blank" rel="noopener">View Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 -->
+      <article class="card">
+        <h3>Memecoin Sentiment Trader</h3>
+        <p>Pipeline that scrapes Reddit/X, runs sentiment models, and predicts 3‑hour crypto price movement for simulated trades.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">CatBoost</span><span class="tag">NLP</span><span class="tag">Pandas</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/your-username/memecoin-sentiment" target="_blank" rel="noopener">View Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Ethan Puckett. Built with hand‑rolled HTML/CSS and hosted on GitHub Pages.</div>
+    </footer>
+  </div>
+  <script>
+    // Tiny enhancement: keep year current
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
