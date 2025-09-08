@@ -1,213 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethan Puckett — Projects</title>
-  <meta name="description" content="A curated selection of projects I’ve built or contributed to." />
+  <title>Ethan Puckett — About Me</title>
+  <meta name="description" content="About Ethan Puckett — Princeton CS student and software developer." />
+  <meta name="theme-color" content="#0b0f19">
   <style>
     :root {
-      --bg: #0b0c10;
-      --panel: #12141a;
-      --text: #e6e6e6;
+      --bg: #0b0f19;
+      --bg2: #101426;
+      --text: #e7e9ee;
       --muted: #a7b0c0;
-      --accent: #7c9cff;
-      --accent-hi: #a9b8ff;
-      --card: #171a21;
-      --border: #242837;
-      --btn: #20263a;
-      --btn-text: #e6e6e6;
+      --accent: #7aa2ff;
+      --card: #121827;
+      --border: #222738;
+      --radius: 18px;
+      --shadow: 0 10px 28px rgba(0,0,0,.35);
     }
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f6f7fb;
-        --panel: #ffffff;
+        --bg2: #fff;
         --text: #0f1222;
         --muted: #4b5565;
-        --accent: #375dfb;
-        --accent-hi: #2544e6;
-        --card: #ffffff;
-        --border: #e5e7ef;
-        --btn: #eef1ff;
-        --btn-text: #0f1222;
+        --card: #fff;
+        --border: #e6e9f2;
+        --shadow: 0 8px 22px rgba(0,0,0,.08);
       }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 30% -10%, rgba(124,156,255,0.18), transparent 60%), var(--bg);
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(122,162,255,0.15), transparent 60%), var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.6;
     }
     .wrap {
-      max-width: 1040px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 24px;
-    }
-    header {
-      padding: 48px 0 16px;
-    }
-    .title {
-      font-size: clamp(28px, 4vw, 44px);
-      margin: 0 0 10px 0;
-      letter-spacing: -0.02em;
-    }
-    .subtitle {
-      color: var(--muted);
-      max-width: 760px;
-      font-size: clamp(16px, 2.2vw, 18px);
-      margin: 0 0 22px 0;
-    }
-    .links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--btn);
-      color: var(--btn-text);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin: 24px 0 64px;
-    }
-    .card {
-      background: linear-gradient(180deg, rgba(124,156,255,0.06), rgba(124,156,255,0.0) 40%), var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
-      min-height: 220px;
+      align-items: center;
+      text-align: center;
     }
-    .card h3 {
-      margin: 0 0 8px;
+    img.profile {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--border);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 10px;
+    }
+    p.subtitle {
       font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-    .card p {
       color: var(--muted);
-      margin: 0 0 14px;
-      font-size: 14.5px;
+      margin: 0 0 30px;
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0 0 14px;
-    }
-    .tag {
-      font-size: 12px;
-      padding: 6px 10px;
-      background: rgba(124,156,255,0.12);
+    .card {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 700px;
+      box-shadow: var(--shadow);
     }
-    .spacer { flex: 1 1 auto; }
-    .card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
     footer {
-      padding: 18px 0 48px;
+      margin-top: 40px;
       color: var(--muted);
       font-size: 14px;
     }
-    a.inline { color: var(--accent); text-decoration: none; }
-    a.inline:hover { text-decoration: underline; color: var(--accent-hi); }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1 class="title">Ethan Puckett — Projects</h1>
-      <p class="subtitle">
-        A short showcase of four projects I’ve built or contributed to. Each card links to the repository and, if available, a live demo.
+    <!-- Replace photo.jpg with your actual filename -->
+    <img src="photo.jpg" alt="Photo of Ethan Puckett" class="profile">
+    <h1>Ethan Puckett</h1>
+    <p class="subtitle">Senior at Princeton University · Computer Science Major · Varsity Football (Inside Linebacker)</p>
+    
+    <div class="card">
+      <p>
+        I’m a senior at Princeton University majoring in Computer Science, passionate about distributed systems, cloud
+        infrastructure, and building tools that improve developer experience. I’ve interned as a software developer at
+        <strong>The Clearing House</strong>, where I contributed production-level features and collaborated on
+        modernizing critical financial systems. Outside academics, I’m an Inside Linebacker on Princeton’s varsity
+        football team, which has taught me resilience, leadership, and teamwork.
       </p>
-      <div class="links">
-        <!-- Replace the placeholder GitHub URL -->
-        <a class="btn" href="https://github.com/ep1401" target="_blank" rel="noopener">GitHub Profile</a>
-        <!-- Optional: add LinkedIn or Resume -->
-        <a class="btn" href="#" target="_blank" rel="noopener">Resume (PDF)</a>
-      </div>
-    </header>
-
-    <section class="grid">
-      <!-- PROJECT 1 -->
-      <article class="card">
-        <h3>CloudDock (VS Code extension)</h3>
-        <p>Unified control for AWS &amp; Azure VMs inside VS Code, with built‑in cost visibility and group‑based scheduling.</p>
-        <div class="tags">
-          <span class="tag">TypeScript</span><span class="tag">AWS SDK</span><span class="tag">Azure SDK</span><span class="tag">VS Code API</span>
-        </div>
-        <div class="spacer"></div>
-        <div class="actions">
-          <a class="btn" href="https://github.com/your-username/clouddock" target="_blank" rel="noopener">View Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-        </div>
-      </article>
-
-      <!-- PROJECT 2 -->
-      <article class="card">
-        <h3>Signable (ASL study tool)</h3>
-        <p>Video-based flashcards, custom quizzes, and professor admin tools — actively used by 100+ students each semester.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span>
-        </div>
-        <div class="spacer"></div>
-        <div class="actions">
-          <a class="btn" href="https://github.com/your-username/signable" target="_blank" rel="noopener">View Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-        </div>
-      </article>
-
-      <!-- PROJECT 3 -->
-      <article class="card">
-        <h3>EquipmentEaze (P2P rentals)</h3>
-        <p>Peer‑to‑peer equipment marketplace focused on scalable search and role‑based access control.</p>
-        <div class="tags">
-          <span class="tag">React</span><span class="tag">Node</span><span class="tag">PostgreSQL</span><span class="tag">Auth</span>
-        </div>
-        <div class="spacer"></div>
-        <div class="actions">
-          <a class="btn" href="https://github.com/your-username/equipmenteaze" target="_blank" rel="noopener">View Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-        </div>
-      </article>
-
-      <!-- PROJECT 4 -->
-      <article class="card">
-        <h3>Memecoin Sentiment Trader</h3>
-        <p>Pipeline that scrapes Reddit/X, runs sentiment models, and predicts 3‑hour crypto price movement for simulated trades.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">CatBoost</span><span class="tag">NLP</span><span class="tag">Pandas</span>
-        </div>
-        <div class="spacer"></div>
-        <div class="actions">
-          <a class="btn" href="https://github.com/your-username/memecoin-sentiment" target="_blank" rel="noopener">View Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-        </div>
-      </article>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> Ethan Puckett. Built with hand‑rolled HTML/CSS and hosted on GitHub Pages.</div>
-    </footer>
+    </div>
+    
+    <footer>© <span id="y"></span> Ethan Puckett</footer>
   </div>
+
   <script>
-    // Tiny enhancement: keep year current
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
