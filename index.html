@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethan Puckett — About Me</title>
-  <meta name="description" content="About Ethan Puckett — Princeton CS student and software developer." />
+  <title>Ethan Puckett — Portfolio</title>
+  <meta name="description" content="Portfolio of Ethan Puckett — Princeton CS student and software developer." />
   <meta name="theme-color" content="#0b0f19">
   <style>
     :root {
@@ -86,8 +86,8 @@
     .grid{
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two per row on desktop */
+      gap: 20px;
       margin-top: 14px;
       text-align: left;
     }
@@ -95,13 +95,13 @@
       background: linear-gradient(180deg, rgba(124,156,255,.06), rgba(124,156,255,0) 42%), var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 18px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      min-height: 200px;
+      min-height: 220px;
     }
-    .proj h3{ margin: 0 0 6px; font-size: 18px; letter-spacing:-.01em; }
-    .proj p{ margin: 0 0 14px; color: var(--muted); font-size: 14.5px; }
+    .proj h3{ margin: 0 0 8px; font-size: 20px; letter-spacing:-.01em; }
+    .proj p{ margin: 0 0 14px; color: var(--muted); font-size: 15px; }
     .spacer{ flex: 1 1 auto; }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -140,32 +140,32 @@
     </div>
 
     <!-- Projects -->
-    <h2 class="section-title" id="projects">Selected Projects</h2>
+    <h2 class="section-title" id="projects">Projects</h2>
     <section class="grid" aria-labelledby="projects">
       <article class="proj">
-        <h3>CloudDock (VS Code Extension)</h3>
-        <p>Unified control for AWS & Azure VMs inside VS Code, with built-in cost visibility and group-based scheduling.</p>
+        <h3>CloudDock</h3>
+        <p>Developed a Visual Studio Code extension to manage AWS and Azure virtual machines in a unified interface, integrating cost tracking and automated scheduling to simplify cloud workflows for developers.</p>
         <div class="spacer"></div>
         <a class="btn" href="https://github.com/ep1401/CloudDock" target="_blank" rel="noopener">View Repository</a>
       </article>
 
       <article class="proj">
-        <h3>Signable (ASL Study Tool)</h3>
-        <p>Video-based flashcards, custom quizzes, and instructor admin tools; used by students for learning ASL.</p>
+        <h3>Signable</h3>
+        <p>Led the design and implementation of a web-based American Sign Language study tool featuring video flashcards, quizzes, and instructor admin tools; adopted by 100+ Princeton students each semester.</p>
         <div class="spacer"></div>
         <a class="btn" href="https://github.com/ep1401/Signable" target="_blank" rel="noopener">View Repository</a>
       </article>
 
       <article class="proj">
         <h3>Forecast Pump/Dump</h3>
-        <p>Explores forecasting crypto pump-and-dump behavior using sentiment/time-series signals and evaluation baselines.</p>
+        <p>Built a crypto price movement forecasting pipeline combining sentiment analysis and time-series modeling to study pump-and-dump patterns, with a focus on predictive performance evaluation.</p>
         <div class="spacer"></div>
         <a class="btn" href="https://github.com/rikaahire/forecast-pumpdump" target="_blank" rel="noopener">View Repository</a>
       </article>
 
       <article class="proj">
-        <h3>COS/ECE 470 — Coursework</h3>
-        <p>Course projects & labs (computer systems/architecture), including low-level programming and hardware-adjacent work.</p>
+        <h3>Bitcoin Client</h3>
+        <p>Implemented a simplified Bitcoin client as part of Princeton’s systems coursework, gaining hands-on experience with blockchain protocols, transaction validation, and distributed consensus mechanisms.</p>
         <div class="spacer"></div>
         <a class="btn" href="https://github.com/ep1401/COS-ECE470-fa2024" target="_blank" rel="noopener">View Repository</a>
       </article>
