@@ -13,6 +13,7 @@
       --text: #e7e9ee;
       --muted: #a7b0c0;
       --accent: #7aa2ff;
+      --accent-2:#a4b7ff;
       --card: #121827;
       --border: #222738;
       --radius: 18px;
@@ -38,22 +39,24 @@
       line-height: 1.6;
     }
     .wrap {
-      max-width: 900px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 20px 72px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
     img.profile {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       object-fit: cover;
+      object-position: 50% 28%;
       border-radius: 50%;
       box-shadow: var(--shadow);
       border: 3px solid var(--border);
       margin-bottom: 24px;
+      background: #ddd;
     }
     h1 {
       font-size: clamp(28px, 5vw, 40px);
@@ -69,9 +72,46 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
-      max-width: 700px;
+      max-width: 800px;
       box-shadow: var(--shadow);
+      text-align: left;
     }
+    .card p { margin: 0; }
+    /* --- Projects --- */
+    .section-title{
+      font-size: clamp(22px, 3.6vw, 28px);
+      margin: 48px 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .grid{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+      text-align: left;
+    }
+    .proj{
+      background: linear-gradient(180deg, rgba(124,156,255,.06), rgba(124,156,255,0) 42%), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+    }
+    .proj h3{ margin: 0 0 6px; font-size: 18px; letter-spacing:-.01em; }
+    .proj p{ margin: 0 0 14px; color: var(--muted); font-size: 14.5px; }
+    .spacer{ flex: 1 1 auto; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px; border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      color: var(--text); text-decoration:none; font-weight:600; font-size:14px;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: var(--accent); box-shadow: 0 0 0 6px rgba(122,162,255,.22); }
     footer {
       margin-top: 40px;
       color: var(--muted);
@@ -81,26 +121,59 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- Replace photo.jpg with your actual filename -->
-    <img src="IMG_2810.jpg" alt="Photo of Ethan Puckett" class="profile">
+    <!-- Headshot -->
+    <img src="Ethan_Puckett.jpg" alt="Photo of Ethan Puckett" class="profile">
+
+    <!-- Hero -->
     <h1>Ethan Puckett</h1>
-    <p class="subtitle">Senior at Princeton University · Computer Science Major </p>
-    
+    <p class="subtitle">Senior at Princeton University · Computer Science Major</p>
+
+    <!-- About -->
     <div class="card">
       <p>
         I’m a senior at Princeton University majoring in Computer Science, passionate about distributed systems, cloud
         infrastructure, and building tools that improve developer experience. I’ve interned as a software developer at
-        The Clearing House, where I contributed production-level features and collaborated on
+        <strong>The Clearing House</strong>, where I contributed production-level features and collaborated on
         modernizing critical financial systems. Outside academics, I’m an Inside Linebacker on Princeton’s varsity
         football team, which has taught me resilience, leadership, and teamwork.
       </p>
     </div>
-    
+
+    <!-- Projects -->
+    <h2 class="section-title" id="projects">Selected Projects</h2>
+    <section class="grid" aria-labelledby="projects">
+      <article class="proj">
+        <h3>CloudDock (VS Code Extension)</h3>
+        <p>Unified control for AWS & Azure VMs inside VS Code, with built-in cost visibility and group-based scheduling.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://github.com/ep1401/CloudDock" target="_blank" rel="noopener">View Repository</a>
+      </article>
+
+      <article class="proj">
+        <h3>Signable (ASL Study Tool)</h3>
+        <p>Video-based flashcards, custom quizzes, and instructor admin tools; used by students for learning ASL.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://github.com/ep1401/Signable" target="_blank" rel="noopener">View Repository</a>
+      </article>
+
+      <article class="proj">
+        <h3>Forecast Pump/Dump</h3>
+        <p>Explores forecasting crypto pump-and-dump behavior using sentiment/time-series signals and evaluation baselines.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://github.com/rikaahire/forecast-pumpdump" target="_blank" rel="noopener">View Repository</a>
+      </article>
+
+      <article class="proj">
+        <h3>COS/ECE 470 — Coursework</h3>
+        <p>Course projects & labs (computer systems/architecture), including low-level programming and hardware-adjacent work.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://github.com/ep1401/COS-ECE470-fa2024" target="_blank" rel="noopener">View Repository</a>
+      </article>
+    </section>
+
     <footer>© <span id="y"></span> Ethan Puckett</footer>
   </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
